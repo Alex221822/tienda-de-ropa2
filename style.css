@@ -13,14 +13,14 @@
 html { scroll-behavior: smooth; }
 body { background-color: var(--bg-dark); color: var(--text-primary); font-family: var(--font-main); overflow-x: hidden; position: relative; }
 
-/* Grafitis repetitivos con STYLO B */
+/* 1. Grafitis con mayor tonalidad / visibilidad */
 .graffiti-bg-tag {
   position: fixed;
   font-family: var(--font-heading);
   font-weight: 900;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.03);
-  font-size: 6.5rem;
+  color: rgba(255, 255, 255, 0.08); /* Aumentado para mayor tonalidad */
+  font-size: 7rem;
   pointer-events: none;
   z-index: 0;
   letter-spacing: 6px;
@@ -48,13 +48,17 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
 .btn-vip:hover { background: #fff; color: #000; }
 .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
-/* Hero */
+/* Carrito trigger en Header */
+.cart-trigger { background: rgba(255,255,255,0.08); border: 1px solid var(--panel-border); color: #fff; padding: 8px 12px; border-radius: 20px; cursor: pointer; position: relative; display: flex; align-items: center; gap: 6px; }
+.nav-icon-svg { width: 20px; height: 20px; stroke: #fff; }
+
+/* 3. Hero con nueva imagen B&W */
 .hero { padding-top: 100px; min-height: 90vh; display: flex; align-items: center; justify-content: center; padding-left: 20px; padding-right: 20px; position: relative; z-index: 2; }
 .hero-stage { max-width: 1300px; width: 100%; position: relative; border-radius: 28px; overflow: hidden; min-height: 600px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--panel-border); background: #000; }
 .hero-bg-wrapper { position: absolute; inset: 0; z-index: 1; }
-.hero-image { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(120%) brightness(0.35); }
+.hero-image { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(120%) brightness(0.4); }
 
-.hero-overlay-dark { position: absolute; inset: 0; background: radial-gradient(circle, rgba(5,6,8,0.3) 0%, rgba(5,6,8,0.85) 100%); }
+.hero-overlay-dark { position: absolute; inset: 0; background: radial-gradient(circle, rgba(5,6,8,0.2) 0%, rgba(5,6,8,0.85) 100%); }
 .hero-centered-content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 30px; }
 .hero-giant-logo { width: clamp(220px, 32vw, 360px); height: clamp(220px, 32vw, 360px); }
 .hero-giant-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; border: 3px solid rgba(255, 255, 255, 0.4); background-color: #000; box-shadow: 0 0 50px rgba(255, 255, 255, 0.25); }
@@ -69,27 +73,8 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
 .section-title { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; }
 .filter-count { color: var(--text-secondary); font-size: 0.9rem; }
 
-.categories-grid-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 16px;
-}
-
-.cat-card-btn {
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-  border-radius: var(--radius-lg);
-  padding: 24px 14px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  transition: all 0.25s ease;
-}
-
+.categories-grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; }
+.cat-card-btn { background: var(--panel-bg); border: 1px solid var(--panel-border); border-radius: var(--radius-lg); padding: 24px 14px; color: var(--text-secondary); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; transition: all 0.25s ease; }
 .cat-svg { width: 34px; height: 34px; stroke: #fff; transition: transform 0.25s ease; }
 .cat-card-btn .cat-name { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px; }
 .cat-card-btn:hover { border-color: rgba(255, 255, 255, 0.4); transform: translateY(-4px); color: #fff; }
@@ -122,10 +107,10 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
 
 .card-price-row { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
 .price { font-size: 1.25rem; font-weight: 800; color: #fff; }
-.btn-buy { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--panel-border); color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: background 0.3s, color 0.3s; }
+.btn-buy { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--panel-border); color: #fff; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 700; transition: background 0.3s, color 0.3s; }
 .btn-buy:hover { background: #fff; color: #000; }
 
-/* Ubicación */
+/* Local */
 .location-box { max-width: 1300px; margin: 0 auto 80px; padding: 0 20px; position: relative; z-index: 2; }
 .location-grid { background: var(--panel-bg); border: 1px solid var(--panel-border); border-radius: 28px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; }
 .location-info { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
@@ -135,20 +120,58 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
 .hours-card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--panel-border); padding: 16px; border-radius: 16px; font-size: 0.9rem; }
 .map-frame { width: 100%; min-height: 380px; }
 
-/* Footer */
+/* 5. Footer con Íconos de Redes Sociales */
 .footer { background: #040508; border-top: 1px solid var(--panel-border); padding: 60px 20px 30px; position: relative; z-index: 2; }
 .footer-wrap { max-width: 1300px; margin: 0 auto 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
 .footer-logo { width: 50px; border-radius: 50%; margin-bottom: 12px; }
 .footer-brand p { color: var(--text-secondary); font-size: 0.9rem; }
 .footer-socials h4 { font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 1px; color: #fff; }
-.social-pills { display: flex; gap: 10px; }
-.social-pills a { background: var(--panel-bg); border: 1px solid var(--panel-border); color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s, color 0.3s; }
+.social-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-pills a { background: var(--panel-bg); border: 1px solid var(--panel-border); color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px; transition: background 0.3s, color 0.3s; }
 .social-pills a:hover { background: #fff; color: #000; }
+.social-svg { width: 18px; height: 18px; }
+.social-pills a:hover .social-svg { stroke: #000; }
 .footer-copy { text-align: center; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--panel-border); padding-top: 24px; }
 
-/* WhatsApp flotante */
-.whatsapp-glow { position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 0 25px rgba(37, 211, 102, 0.5); z-index: 999; text-decoration: none; transition: transform 0.3s; }
+/* 2. WhatsApp Flotante con Ícono Vectorial */
+.whatsapp-glow { position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(37, 211, 102, 0.5); z-index: 998; text-decoration: none; transition: transform 0.3s; }
 .whatsapp-glow:hover { transform: scale(1.1); }
+.wa-icon-svg { width: 30px; height: 30px; fill: #fff; }
+
+/* 4. Carrito Flotante y Drawer (Panel Lateral) */
+.cart-floating-btn { position: fixed; bottom: 100px; right: 28px; width: 54px; height: 54px; background: #fff; color: #000; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); z-index: 998; cursor: pointer; transition: transform 0.3s; }
+.cart-floating-btn:hover { transform: scale(1.1); }
+.cart-icon-svg { width: 24px; height: 24px; stroke: #000; }
+.cart-badge { position: absolute; top: -4px; right: -4px; background: #ff3b30; color: #fff; font-size: 0.7rem; font-weight: 800; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+.cart-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 1001; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.cart-drawer-overlay.active { opacity: 1; pointer-events: auto; }
+
+.cart-drawer { position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100vh; background: #080a0f; border-left: 1px solid var(--panel-border); z-index: 1002; display: flex; flex-direction: column; transition: right 0.3s ease; }
+.cart-drawer.active { right: 0; }
+
+.cart-header { padding: 20px; border-bottom: 1px solid var(--panel-border); display: flex; align-items: center; justify-content: space-between; }
+.cart-header h3 { font-family: var(--font-heading); font-size: 1.2rem; }
+.close-cart-btn { background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+.cart-items-container { padding: 20px; flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+.cart-empty-msg { text-align: center; color: var(--text-secondary); margin-top: 40px; font-size: 0.95rem; }
+
+.cart-item { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--panel-border); padding: 10px; border-radius: 12px; }
+.cart-item-img { width: 50px; height: 60px; object-fit: cover; border-radius: 8px; }
+.cart-item-details { flex-grow: 1; }
+.cart-item-title { font-size: 0.85rem; font-weight: 700; color: #fff; }
+.cart-item-price { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+.cart-item-qty { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.qty-btn { background: rgba(255,255,255,0.1); border: none; color: #fff; width: 22px; height: 22px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+.qty-num { font-size: 0.85rem; font-weight: 700; }
+.remove-item-btn { background: none; border: none; color: #ff3b30; cursor: pointer; font-size: 1.1rem; padding: 4px; }
+
+.cart-footer { padding: 20px; border-top: 1px solid var(--panel-border); background: #040508; }
+.cart-total-row { display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; margin-bottom: 16px; }
+.btn-checkout-wa { width: 100%; background: #25d366; color: #fff; border: none; padding: 14px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.2s; }
+.btn-checkout-wa:hover { transform: scale(1.02); }
+.wa-icon-sm { width: 20px; height: 20px; fill: #fff; }
 
 /* Responsive */
 @media (max-width: 768px) {
