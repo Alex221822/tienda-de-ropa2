@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STYLO B | Streetwear & Urban Culture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Grafitis de fondo repetitivos con el nombre STYLO B -->
+  <div class="graffiti-bg-tag tag-1">STYLO B</div>
+  <div class="graffiti-bg-tag tag-2">STYLO B</div>
+  <div class="graffiti-bg-tag tag-3">STYLO B</div>
+  <div class="graffiti-bg-tag tag-4">STYLO B</div>
+
+  <!-- Header / Barra Superior -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <img src="logo.png" alt="Stylo B" class="logo-img">
+        <span class="brand-text">STYLO<span class="highlight">B</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#categorias" class="nav-link">Explorar</a>
+        <a href="#productos" class="nav-link">Colección</a>
+        <a href="#ubicacion" class="nav-link">Locales</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5493525555555?text=Hola,%20me%20interesa%20recibir%20atenci%C3%B3n%20VIP" target="_blank" class="btn-vip">
+          <span>Atención VIP</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seccion Inicio / Hero B&W Cool -->
+  <section id="hero" class="hero">
+    <div class="hero-stage">
+      <div class="hero-bg-wrapper">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&auto=format&fit=crop" alt="Urban Streetwear" class="hero-image">
+        <div class="hero-overlay-dark"></div>
+      </div>
+      
+      <div class="hero-centered-content">
+        <div class="hero-giant-logo">
+          <img src="logo.png" alt="Stylo B Logo Principal">
+        </div>
+        <div class="hero-floating-actions">
+          <a href="#productos" class="btn-neon-pulse">
+            <span>Ver Catálogo</span> &darr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Categorías con Iconos SVG Precisos y Específicos -->
+  <section id="categorias" class="categories-section">
+    <div class="section-header">
+      <div>
+        <span class="section-tag">Colecciones</span>
+        <h2 class="section-title">Categorías Populares</h2>
+      </div>
+      <div class="filter-count"><span id="activeCount">8</span> Productos</div>
+    </div>
+
+    <div class="categories-grid-cards">
+      <!-- Todos -->
+      <button class="cat-card-btn active" data-category="todos">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="cat-name">Todos</span>
+      </button>
+
+      <!-- Conjuntos (Hoodie + Pantalón) -->
+      <button class="cat-card-btn" data-category="conjuntos">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l3 3v4l-2 2v9H7v-9l-2-2V6l3-3h8z"/><path d="M9 3a3 3 0 006 0"/></svg>
+        <span class="cat-name">Conjuntos</span>
+      </button>
+
+      <!-- Zapatillas -->
+      <button class="cat-card-btn" data-category="zapatillas">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17h20c-.6-3.5-2.2-6.5-5.5-6.5H13l-2-2.5H8.5l-2 2.5H4C2.5 10.5 2 13.5 2 17z"/><path d="M2 17v2a1 1 0 001 1h18a1 1 0 001-1v-2"/><path d="M6 13l2 4M12 13l2 4"/></svg>
+        <span class="cat-name">Zapatillas</span>
+      </button>
+
+      <!-- Pantalones -->
+      <button class="cat-card-btn" data-category="pantalones">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6l1 18H14l-2-9-2 9H8L9 3z"/><path d="M9 3H7l-1 4"/></svg>
+        <span class="cat-name">Pantalones</span>
+      </button>
+
+      <!-- Remeras -->
+      <button class="cat-card-btn" data-category="remeras">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-2 3v11H6V10L4 7l4-4h8z"/><path d="M9 3a3 3 0 006 0"/></svg>
+        <span class="cat-name">Remeras</span>
+      </button>
+
+      <!-- Gorras -->
+      <button class="cat-card-btn" data-category="gorras">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13a9 9 0 0118 0v2H3v-2z"/><path d="M19 15h4v2h-4z"/><path d="M12 4a3 3 0 00-3 3h6a3 3 0 00-3-3z"/></svg>
+        <span class="cat-name">Gorras</span>
+      </button>
+
+      <!-- Camperas -->
+      <button class="cat-card-btn" data-category="camperas">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3l4 4v3l-2 2v9H7v-9l-2-2V7l4-4h6z"/><path d="M12 3v18"/><path d="M9 3a3 3 0 006 0"/></svg>
+        <span class="cat-name">Camperas</span>
+      </button>
+
+      <!-- Buzos -->
+      <button class="cat-card-btn" data-category="buzos">
+        <svg class="cat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4l4 3v13H4V7l4-3h8z"/><path d="M9 4a3 3 0 006 0"/><path d="M12 4v4"/></svg>
+        <span class="cat-name">Buzos</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Catálogo de Productos -->
+  <section id="productos" class="products-section">
+    <div class="products-grid">
+
+      <!-- Card 1 -->
+      <div class="product-card" data-category="buzos">
+        <div class="card-media">
+          <span class="badge-new">HOT</span>
+          <div class="slider-wrapper">
+            <img src="img/productos/Buzo1.jpg" alt="Buzo 1">
+            <img src="img/productos/Buzo2.jpg" alt="Buzo 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Buzos & Hoodies</span>
+          <h3 class="card-name">Buzo Heavy Cotton Drop</h3>
+          <div class="card-sizes">
+            <span class="size-pill">S</span>
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+            <span class="size-pill">XL</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$36.000</span>
+            <a href="#" class="btn-buy" data-product="Buzo Heavy Cotton Drop">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card" data-category="buzos">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="img/productos/Sueter1.jpg" alt="Suéter 1">
+            <img src="img/productos/Sueter2.jpg" alt="Suéter 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Suéteres</span>
+          <h3 class="card-name">Suéter Knit Streetwear</h3>
+          <div class="card-sizes">
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+            <span class="size-pill">XL</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$34.000</span>
+            <a href="#" class="btn-buy" data-product="Suéter Knit Streetwear">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card" data-category="camperas">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="img/productos/Campera.jpg" alt="Campera">
+            <img src="img/productos/chalecho1.jpg" alt="Chaleco">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Camperas</span>
+          <h3 class="card-name">Campera Tactical Tech</h3>
+          <div class="card-sizes">
+            <span class="size-pill">S</span>
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$52.000</span>
+            <a href="#" class="btn-buy" data-product="Campera Tactical Tech">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card" data-category="conjuntos">
+        <div class="card-media">
+          <span class="badge-new">TOP</span>
+          <div class="slider-wrapper">
+            <img src="img/productos/Conjunto.jpg" alt="Conjunto 1">
+            <img src="img/productos/Conjunto2.jpg" alt="Conjunto 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Conjuntos</span>
+          <h3 class="card-name">Set Oversize Full Style</h3>
+          <div class="card-sizes">
+            <span class="size-pill">S</span>
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+            <span class="size-pill">XL</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$48.000</span>
+            <a href="#" class="btn-buy" data-product="Set Oversize Full Style">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card" data-category="gorras">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="img/productos/gorra1.jpg" alt="Gorra 1">
+            <img src="img/productos/gorra2.jpg" alt="Gorra 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Accesorios</span>
+          <h3 class="card-name">Cap Stylo B Snapback</h3>
+          <div class="card-sizes">
+            <span class="size-pill">Único</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$16.000</span>
+            <a href="#" class="btn-buy" data-product="Cap Stylo B Snapback">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card" data-category="pantalones">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="img/productos/jogging1.jpg" alt="Jogging 1">
+            <img src="img/productos/jogging2.jpg" alt="Jogging 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Pantalones</span>
+          <h3 class="card-name">Jogging Streetwear Fit</h3>
+          <div class="card-sizes">
+            <span class="size-pill">S</span>
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+            <span class="size-pill">XL</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$32.000</span>
+            <a href="#" class="btn-buy" data-product="Jogging Streetwear Fit">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card" data-category="zapatillas">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="img/productos/zapatilla1.jpeg" alt="Zapatilla 1">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Calzado</span>
+          <h3 class="card-name">Sneakers Urban Cyber</h3>
+          <div class="card-sizes">
+            <span class="size-pill">39</span>
+            <span class="size-pill">40</span>
+            <span class="size-pill">41</span>
+            <span class="size-pill">42</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$59.000</span>
+            <a href="#" class="btn-buy" data-product="Sneakers Urban Cyber">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="product-card" data-category="remeras">
+        <div class="card-media">
+          <div class="slider-wrapper">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop" alt="Remera 1">
+            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop" alt="Remera 2">
+          </div>
+          <button class="slide-nav prev">&lsaquo;</button>
+          <button class="slide-nav next">&rsaquo;</button>
+        </div>
+        <div class="card-details">
+          <span class="card-cat">Remeras</span>
+          <h3 class="card-name">Remera Boxy Fit Graphics</h3>
+          <div class="card-sizes">
+            <span class="size-pill">S</span>
+            <span class="size-pill">M</span>
+            <span class="size-pill">L</span>
+          </div>
+          <div class="card-price-row">
+            <span class="price">$22.000</span>
+            <a href="#" class="btn-buy" data-product="Remera Boxy Fit Graphics">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ubicacion -->
+  <section id="ubicacion" class="location-box">
+    <div class="location-grid">
+      <div class="location-info">
+        <span class="badge-pill">Store Oficial</span>
+        <h2>VENÍ A CONOCER NUESTRO LOCAL</h2>
+        <p>Villa del Totoral, Córdoba, Argentina</p>
+        <div class="hours-card">
+          <div><strong>Lunes a Sábado:</strong> 09:30 - 13:00 | 17:30 - 21:30</div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13689.84501258641!2d-63.7228805!3d-30.8164805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432f8389ff70bb5%3A0x6b45053cf25e24c5!2sVilla%20del%20Totoral%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Stylo B" class="footer-logo">
+        <p>Stylo B Indumentaria. Cultura urbana y tendencias exclusivas.</p>
+      </div>
+      <div class="footer-socials">
+        <h4>Conectá con nosotros</h4>
+        <div class="social-pills">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://tiktok.com" target="_blank">TikTok</a>
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2026 STYLO B. Todos los derechos reservados. Villa del Totoral.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flotante -->
+  <a href="https://wa.me/5493525555555?text=Hola,%20quiero%20hacer%20una%20consulta%20general" class="whatsapp-glow" target="_blank" aria-label="WhatsApp">
+    💬
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
